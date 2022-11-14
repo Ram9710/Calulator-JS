@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" type="image/png" href="keys.png" />
+</head>
+<style>
+    .title {
+        margin-bottom: 15px;
+        text-align: center;
+        width: 330px;
+        color: rgba(5, 5, 5, 0.774);
+        border: solid 1px rgb(10, 10, 10);
+        border-width: 5px;
+        background-color: rgb(250, 250, 250);
+        font-size: 25px;
+        opacity: 0.8;
+    }
+
+    input[type='button'] {
+        background-color: rgb(19, 18, 18);
+        width: 100%;
+        height: 50px;
+border-radius: 6px;
+        color: white;
+        border: rgb(7, 7, 7) 2px solid;
+        border-width: 18px;
+        opacity: 0.6;
+    }
+
+    input[type='text'] {
+        height: 55px;
+        width: 95%;
+        color: white;
+        border-radius: 6px;
+        text-align: center;
+        opacity: 0.6;
+        background-color: rgb(20, 19, 19);
+        border: 3px solid rgb(30, 7, 236);
+
+    }
+
+    .main {
+        padding-left: 600px;
+        padding-top: 200px;
+
+    }
+
+    #result {
+        font-size: 22px;
+    }
+    body{
+        background-image: url(./compass.jpg);
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+    }
+</style>
+
+<body>
+
+    <div class="main">
+        <div class="title">
+            Calculator
+        </div>
+        <table>
+            <tr>
+                <td colspan="3"><input type="text" id='result'></td>
+                    <td><input type="button" value="C" onclick="clr()"></td>
+                
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="display('1')"></td>
+                    <td><input type="button" value="2" onclick="display('2')"></td>
+                    <td><input type="button" value="3" onclick="display('3')"></td>
+                    <td><input type="button" value="-" onclick="display('-')"></td>
+                
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="display('4')"></td>
+                    <td><input type="button" value="5" onclick="display('5')"></td>
+                    <td><input type="button" value="6" onclick="display('6')"></td>
+                    <td><input type="button" value="+" onclick="display('+')"></td>
+                
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="display('7')"></td>
+                    <td><input type="button" value="8" onclick="display('8')"></td>
+                    <td><input type="button" value="9" onclick="display('9')"></td>
+                    <td><input type="button" value="/" onclick="display('/')"></td>
+                
+            </tr>
+            <tr>
+                <td><input type="button" value="." onclick="display('.')"></td>
+                    <td><input type="button" value="0" onclick="display('0')"></td>
+                    <td><input type="button" value="=" onclick="evaq()"></td>
+                    <td><input type="button" value="*" onclick="display('*')"></td>
+                
+            </tr>
+        </table>
+        <script type="text/javascript">
+            function clr() {
+                document.getElementById('result').value=''
+            }
+            function display(val) {
+                document.getElementById('result').value+=val
+                
+            }
+            function evaq() {
+               
+                let x=document.getElementById('result').value
+                let y=eval(x)
+                document.getElementById('result').value=y
+            }
+        </script>
+
+</body>
+
+</html>
